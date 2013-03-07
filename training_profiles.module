@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Training Profiles feature.
+ */
+
+include_once 'training_profiles.features.inc';
