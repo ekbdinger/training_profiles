@@ -24,4 +24,5 @@ features[image][] = trainer_profile_pic
 features[profile2_type][] = trainer
 features[user_role][] = training profile admin
 features[views_view][] = trainers_list
+features[views_view][] = trainers_list_with_edit
 features_exclude[dependencies][ctools] = ctools
