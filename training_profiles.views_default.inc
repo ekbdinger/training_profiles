@@ -74,11 +74,24 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Profile: trainer_picture */
+  $handler->display->display_options['fields']['field_trainer_picture']['id'] = 'field_trainer_picture';
+  $handler->display->display_options['fields']['field_trainer_picture']['table'] = 'field_data_field_trainer_picture';
+  $handler->display->display_options['fields']['field_trainer_picture']['field'] = 'field_trainer_picture';
+  $handler->display->display_options['fields']['field_trainer_picture']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_trainer_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_trainer_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_trainer_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_trainer_picture']['settings'] = array(
+    'image_style' => 'trainer_profile_pic',
+    'image_link' => 'content',
+  );
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   /* Field: Profile: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
