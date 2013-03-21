@@ -179,7 +179,6 @@ function training_profiles_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'trainers';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Trainer Profiles';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -233,6 +232,9 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['alter']['text'] = '<strong>[field_first_name]</strong>';
   $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
   /* Field: Profile: Last Name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
@@ -240,6 +242,8 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['relationship'] = 'profile';
   $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['alter']['text'] = '<strong>[field_first_name]</strong>&nbsp;<strong>[field_last_name]</strong>';
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -298,6 +302,7 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['user']['table'] = 'profile';
   $handler->display->display_options['fields']['user']['field'] = 'user';
   $handler->display->display_options['fields']['user']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['user']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
