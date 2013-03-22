@@ -208,6 +208,9 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reset Filters';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'grid';
@@ -218,6 +221,7 @@ function training_profiles_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['columns'] = '5';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: User: Profile */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
@@ -273,17 +277,25 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   /* Field: Profile: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<h2>[field_location]</h2>';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
   /* Field: Profile: Start Date */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_start_date']['label'] = '';
+  $handler->display->display_options['fields']['field_start_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_start_date']['alter']['text'] = '<strong>Start Date:  </strong>[field_start_date]';
+  $handler->display->display_options['fields']['field_start_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
@@ -297,6 +309,10 @@ function training_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_role']['table'] = 'field_data_field_role';
   $handler->display->display_options['fields']['field_role']['field'] = 'field_role';
   $handler->display->display_options['fields']['field_role']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_role']['label'] = '';
+  $handler->display->display_options['fields']['field_role']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_role']['alter']['text'] = '<strong>Role:  </strong>[field_role]';
+  $handler->display->display_options['fields']['field_role']['element_label_colon'] = FALSE;
   /* Field: Profile: User uid */
   $handler->display->display_options['fields']['user']['id'] = 'user';
   $handler->display->display_options['fields']['user']['table'] = 'profile';
